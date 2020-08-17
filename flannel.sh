@@ -1,5 +1,6 @@
 #!/bin/bash
 mkdir /usr/src/flannel
+mkdir /etc/kube-flannel
 tar -xzvf flannel-v0.11.0-linux-amd64.tar.gz -C /usr/src/flannel
 
 cat <<EOF >/usr/src/flannel/nodeName
@@ -27,6 +28,7 @@ Restart=on-failure
 WantedBy=multi-user.target
 RequiredBy=docker.service
 EOF
+
 cat <<EOF >/etc/kube-flannel/net-conf.json
 {
   "Network": "10.244.0.0/16",

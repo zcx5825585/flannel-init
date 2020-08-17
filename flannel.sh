@@ -1,7 +1,6 @@
 #!/bin/bash
 mkdir /usr/src/flannel
 tar -xzvf flannel-v0.11.0-linux-amd64.tar.gz -C /usr/src/flannel
-cp file/ /usr/src/flannel/ -r
 
 cat <<EOF >/usr/src/flannel/nodeName
 NODE_NAME=$HOSTNAME
